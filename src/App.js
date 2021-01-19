@@ -9,6 +9,8 @@ class App extends Component {
     return(
       <div className='App'>
         <ReactYoutube videoId = 'AOuo4q0xFNc' />
+        <ReactYoutube videoId = 'LY6HHTx33JM' />
+        <ReactYoutube videoId = '9GvTYd5hG_g' />
       </div>
     )
   }
