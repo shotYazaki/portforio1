@@ -1,12 +1,16 @@
 import React from 'react'
 import ReactYoutube from '../ReactYoutube';
 
-class Home extends React.Component {
-    render() {
-        return (
-            <ReactYoutube videoId = 'Igz41-Voa58' />
-        )
-    }
+
+
+function Home () {
+    return (
+        <div>
+            <ReactYoutube videoId = 'vlDzYIIOYmM' />
+            <ReactYoutube videoId = 'Ks71YWIDEuM' />
+            <ReactYoutube videoId = 'Jqf9haCd6mM' />
+        </div>
+    );
 }
 
 export default Home
