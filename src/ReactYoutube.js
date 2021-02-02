@@ -68,15 +68,19 @@ export default class ReactYoutube extends React.Component {
     };
     const {videoId} = this.props
     return (
-      <YouTube
-        videoId={videoId}
-        opts={opts}
-        onReady={_onReady}
-        onPlay={_onPlay}
-        onPause={_onPause}
-        onEnd={_onEnd}
-        onStateChange={this.videoStateChange}
-      />
-    )
+      <React.Fragment>
+        <div className='Youtube-Video'>
+          <YouTube
+            videoId={videoId}
+            opts={opts}
+            onReady={_onReady}
+            onPlay={_onPlay}
+            onPause={_onPause}
+            onEnd={_onEnd}
+            onStateChange={this.videoStateChange}
+          />
+        </div>
+      </React.Fragment>
+    );
   }
 }
