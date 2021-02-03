@@ -1,5 +1,6 @@
-import React from 'react'
-import YouTube from 'react-youtube'
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import YouTube from 'react-youtube';
 
 // https://www.youtube.com/watch?v=-_pgcFQ0l64
 // https://youtu.be/-_pgcFQ0l64
