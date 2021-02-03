@@ -80,6 +80,15 @@ export default class ReactYoutube extends React.Component {
             onStateChange={this.videoStateChange}
           />
         </div>
+        <div className="float-btn">
+          <div className="btn-play-pause">
+            <div className="btn-play-pause">
+              { this.state.isToogle ? <FontAwesomeIcon icon={faPause} size="xs" className="icon" onClick={() => this.pause()}/>
+                : <FontAwesomeIcon icon={faPlay} size="xs" className="icon" onClick={() => this.play()}/>
+              }
+            </div>
+          </div> 
+        </div>
       </React.Fragment>
     );
   }
