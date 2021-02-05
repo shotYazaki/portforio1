@@ -1,5 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 import YouTube from 'react-youtube';
 
 // https://www.youtube.com/watch?v=-_pgcFQ0l64
