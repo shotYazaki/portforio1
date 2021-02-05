@@ -1,12 +1,28 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
+import Proptypes from 'prop-types';
 import YouTube from 'react-youtube';
 
 // https://www.youtube.com/watch?v=-_pgcFQ0l64
 // https://youtu.be/-_pgcFQ0l64
 // https://www.youtube.com/watch?v=-_pgcFQ0l64&list=PLEsfXFp6DpzQbwYDx1zgcKJ4tzyWFaESK
 export default class ReactYoutube extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      eventVideo: {},
+      responsed: false,
+      isToogle: false,
+      playbackRate: 1,
+      progressBar: 0,
+    };
+
+    this.play = this.play.bind(this);
+    this.pause = this.pause.bind(this);
+    this.repeat = this.repeat.bind(this);
+
+  }
 
   play() {
     let video = this.setState.eventVideo?.target;
@@ -95,3 +111,13 @@ export default class ReactYoutube extends React.Component {
     );
   }
 }
+
+ReactYoutube.propTypes = {
+  skitDetail: Proptypes.object,
+  dispatch: Proptypes.func,
+  math: Proptypes.shape({
+    params: Proptypes.shape({
+      sklitId: Proptypes.string
+    }),
+  }),
+};
