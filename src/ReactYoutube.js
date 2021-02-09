@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 import Proptypes from 'prop-types';
 import YouTube from 'react-youtube';
-
 // https://www.youtube.com/watch?v=-_pgcFQ0l64
 // https://youtu.be/-_pgcFQ0l64
 // https://www.youtube.com/watch?v=-_pgcFQ0l64&list=PLEsfXFp6DpzQbwYDx1zgcKJ4tzyWFaESK
@@ -43,8 +42,9 @@ export default class ReactYoutube extends React.Component {
   };
 
   repeat() {
+    this.state.eventVideo?.target?.seekTo(this.props.skitDetail.video?.playFrom, true);
     this.play();
-  };
+  }
 
 
   componentWillUnmount (event) {

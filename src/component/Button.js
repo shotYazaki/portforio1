@@ -5,7 +5,7 @@ export default class PlayButton extends React.Component {
     render() {
         return(
             <div>
-              <Button variant="primary" size ="lg" onClick={() => this.play()}>
+              <Button variant="primary" size ="lg" active>
                  Youtube play
               </Button>
             </div>
