@@ -75,6 +75,8 @@ export default class ReactYoutube extends React.Component {
       height: '390',
       width: '640',
       playerVars: { // https://developers.google.com/youtube/player_parameters
+        strt: Math.trunc(self.props.skitDetail?.playFrom),
+        end: Math.ceil(self.props.skitDetail?.playUntiil),
         loop: 1,
         autoplay: 1,
         controls: 0,
