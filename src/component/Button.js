@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
-export default class PlayButton extends React.Component {
+class PlayButton extends React.Component {
     render() {
         return(
             <div>
@@ -12,3 +13,9 @@ export default class PlayButton extends React.Component {
         )
     }
 }
+
+Button.propTypes = {
+    play: PropTypes.func,
+};
+
+export default PlayButton;
