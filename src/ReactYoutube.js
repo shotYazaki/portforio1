@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
+import { Button } from 'react-bootstrap';
 import Proptypes from 'prop-types';
 import YouTube from 'react-youtube';
 // https://www.youtube.com/watch?v=-_pgcFQ0l64
@@ -89,6 +90,11 @@ export default class ReactYoutube extends React.Component {
     const {videoId} = this.props
     return (
       <React.Fragment>
+        <div className="Play-button">
+          <Button variant="primary" size ="lg" onClick={() => {this.onPlay()}}>
+            Youtube play
+          </Button>
+        </div>
         <div className='Youtube-Video'>
           <YouTube
             videoId={videoId}
