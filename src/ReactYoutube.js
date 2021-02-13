@@ -91,7 +91,7 @@ export default class ReactYoutube extends React.Component {
     return (
       <React.Fragment>
         <div className="Play-button">
-          <Button variant="primary" size ="lg" onClick={() => {this.onPlay()}}>
+          <Button variant="primary" size ="lg" onClick={() => {this.play()}}>
             Youtube play
           </Button>
         </div>
