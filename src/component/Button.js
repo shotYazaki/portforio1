@@ -6,7 +6,7 @@ class PlayButton extends React.Component {
     render() {
         return(
             <div>
-              <Button variant="primary" size ="lg" active>
+              <Button variant="primary" size ="lg" onClick={() => {this.onPlay()}}>
                  Youtube play
               </Button>
             </div>
