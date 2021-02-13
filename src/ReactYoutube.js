@@ -1,6 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 import { Button } from 'react-bootstrap';
 import Proptypes from 'prop-types';
 import YouTube from 'react-youtube';
@@ -105,15 +103,6 @@ export default class ReactYoutube extends React.Component {
             onEnd={_onEnd}
             onStateChange={this.videoStateChange}
           />
-        </div>
-        <div className="float-btn">
-          <div className="btn-play-pause">
-            <div className="btn-play-pause">
-              { this.state.isToogle ? <FontAwesomeIcon icon={faPause} size="xs" className="icon" onClick={() => this.pause()}/>
-                : <FontAwesomeIcon icon={faPlay} size="xs" className="icon" onClick={() => this.play()}/>
-              }
-            </div>
-          </div> 
         </div>
       </React.Fragment>
     );
