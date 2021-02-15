@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { ButtonGroup, Button } from 'react-bootstrap';
 import Proptypes from 'prop-types';
 import YouTube from 'react-youtube';
 // https://www.youtube.com/watch?v=-_pgcFQ0l64
@@ -88,9 +88,10 @@ export default class ReactYoutube extends React.Component {
     return (
       <React.Fragment>
         <div className="Play-button">
-          <Button variant="primary" size ="lg" onClick={this.play}>
-            Youtube play
-          </Button>
+          <ButtonGroup size="mb-2">
+            <Button onClick={this.play}>play</Button>
+            <Button onClick={this.pause}>pause</Button>
+          </ButtonGroup>
         </div>
         <div className='Youtube-Video'>
           <YouTube
