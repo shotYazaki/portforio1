@@ -58,7 +58,8 @@ export default class ReactYoutube extends React.Component {
       self.play();
     };
 
-    const _onReady = () => {
+    const _onReady = (event) => {
+      self.setState({ eventVideo: event });
       self.play();
     };
 
@@ -89,7 +90,7 @@ export default class ReactYoutube extends React.Component {
     return (
       <React.Fragment>
         <div className="Play-button">
-          <Button variant="primary" size ="lg" onClick={() => {this.play()}}>
+          <Button variant="primary" size ="lg" onClick={this.play}>
             Youtube play
           </Button>
         </div>
