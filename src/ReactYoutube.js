@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonGroup, Button } from 'react-bootstrap';
+import { ButtonGroup, Button, ProgressBar } from 'react-bootstrap';
 import Proptypes from 'prop-types';
 import YouTube from 'react-youtube';
 // https://www.youtube.com/watch?v=-_pgcFQ0l64
@@ -41,8 +41,18 @@ export default class ReactYoutube extends React.Component {
   };
 
   repeat() {
-    this.state.eventVideo?.target?.seekTo(this.props.skitDetail.video?.playFrom, true);
     this.play();
+  }
+
+  updateProgressBar(){
+    let timeDurration = this.props.playUntil - this.props.playFrom;
+    let timeRunning = this.state.eventVideo?.target?.getCurrentTime() - this.props.playFrom;
+    let percentage = Math.floor((timeRunning / timeDurration) * 100);
+    this.setState((prevState) =>  {
+      if (prevState.progressBar < percentage){
+        return { progressBar: percentage };
+      }
+    });
   }
 
 
@@ -103,6 +113,7 @@ export default class ReactYoutube extends React.Component {
             onEnd={_onEnd}
             onStateChange={this.videoStateChange}
           />
+          <ProgressBar className="b-progress-bar" now={this.props.progressBar} />
         </div>
       </React.Fragment>
     );
