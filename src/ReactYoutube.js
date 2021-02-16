@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonGroup, Button, ProgressBar } from 'react-bootstrap';
+import { ButtonGroup, Button, Col } from 'react-bootstrap';
 import Proptypes from 'prop-types';
 import YouTube from 'react-youtube';
 // https://www.youtube.com/watch?v=-_pgcFQ0l64
@@ -19,7 +19,7 @@ export default class ReactYoutube extends React.Component {
     this.play = this.play.bind(this);
     this.pause = this.pause.bind(this);
     this.repeat = this.repeat.bind(this);
-
+    this.stop = this.stop.bind(this);
   }
 
   play() {
@@ -44,6 +44,12 @@ export default class ReactYoutube extends React.Component {
     this.play();
   }
 
+  stop() {
+    let video = this.state.eventVideo?.target;
+    video?.stopVideo();
+  }
+
+
   updateProgressBar(){
     let timeDurration = this.props.playUntil - this.props.playFrom;
     let timeRunning = this.state.eventVideo?.target?.getCurrentTime() - this.props.playFrom;
@@ -53,12 +59,6 @@ export default class ReactYoutube extends React.Component {
         return { progressBar: percentage };
       }
     });
-  }
-
-
-  componentWillUnmount (event) {
-    const player = event.target
-    console.log(player.getCurrentTime())
   }
 
   render () {
@@ -101,20 +101,22 @@ export default class ReactYoutube extends React.Component {
           <ButtonGroup size="mb-2">
             <Button onClick={this.play}>play</Button>
             <Button onClick={this.pause}>pause</Button>
+            <Button onClick={this.stop}>stop</Button>
           </ButtonGroup>
         </div>
-        <div className='Youtube-Video'>
-          <YouTube
-            videoId={videoId}
-            opts={opts}
-            onReady={_onReady}
-            onPlay={_onPlay}
-            onPause={_onPause}
-            onEnd={_onEnd}
-            onStateChange={this.videoStateChange}
-          />
-          <ProgressBar className="b-progress-bar" now={this.props.progressBar} />
-        </div>
+        <Col>
+          <div className='Youtube-Video'>
+            <YouTube
+              videoId={videoId}
+              opts={opts}
+              onReady={_onReady}
+              onPlay={_onPlay}
+              onPause={_onPause}
+              onEnd={_onEnd}
+              onStateChange={this.videoStateChange}
+            />
+          </div>
+        </Col>
       </React.Fragment>
     );
   }
