@@ -1,7 +1,9 @@
 import React from 'react';
-import { ButtonGroup, Button, Col } from 'react-bootstrap';
+import { ButtonGroup, Button, Col, } from 'react-bootstrap';
 import Proptypes from 'prop-types';
 import YouTube from 'react-youtube';
+import ProgressBar from './ProgressBar';
+
 // https://www.youtube.com/watch?v=-_pgcFQ0l64
 // https://youtu.be/-_pgcFQ0l64
 // https://www.youtube.com/watch?v=-_pgcFQ0l64&list=PLEsfXFp6DpzQbwYDx1zgcKJ4tzyWFaESK
@@ -41,6 +43,8 @@ export default class ReactYoutube extends React.Component {
   };
 
   repeat() {
+    this.setState({ progressBar: 0});
+    this.state.eventVideo?.target.seekTo(this.props.video?.playFprm, true);
     this.play();
   }
 
@@ -115,6 +119,7 @@ export default class ReactYoutube extends React.Component {
               onEnd={_onEnd}
               onStateChange={this.videoStateChange}
             />
+            <ProgressBar className="b-progress-bar" now={this.props.progressBar} />
           </div>
         </Col>
       </React.Fragment>
