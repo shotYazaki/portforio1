@@ -1,10 +1,9 @@
 import React from 'react';
-import'./App.css';
+import'./stylesheet/App.sass';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './component/Home';
 import Header from './component/Header';
 
-import './App.css';
 
 function App () {
     return(
