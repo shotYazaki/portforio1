@@ -1,8 +1,7 @@
 import React from 'react';
-import { ButtonGroup, Button, Col, } from 'react-bootstrap';
+import { ButtonGroup, Button, Col, ProgressBar } from 'react-bootstrap';
 import Proptypes from 'prop-types';
 import YouTube from 'react-youtube';
-import ProgressBar from './ProgressBar';
 
 // https://www.youtube.com/watch?v=-_pgcFQ0l64
 // https://youtu.be/-_pgcFQ0l64
@@ -106,8 +105,8 @@ export default class ReactYoutube extends React.Component {
             <Button onClick={this.stop}>stop</Button>
           </ButtonGroup>
         </div>
-        <Col>
-          <div className='Youtube-Video'>
+        <Col g={{ span: 8, offset: 2 }} md={12} sm={12} xs={12} className="p-0 p-sm-1 p-md-2 p-lg-3">
+          <div className={"auto-resizable-iframe"}>
             <YouTube
               videoId={videoId}
               opts={opts}
