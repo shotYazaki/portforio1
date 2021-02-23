@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactYoutube from '../ReactYoutube';
-
-
+import '../stylesheet/Home.sass'
 class Home extends React.Component {
     render() {
         return(
