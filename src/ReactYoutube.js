@@ -130,7 +130,7 @@ export default class ReactYoutube extends React.Component {
               onEnd={_onEnd}
             />
           </div>
-          <ProgressBar className="b-progress-bar" now={this.props.progressBar}/>
+          <ProgressBar />
         </Col>
       </React.Fragment>
     );
