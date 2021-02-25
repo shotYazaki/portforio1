@@ -1,9 +1,10 @@
 import React from 'react';
-import { ButtonGroup, Button, Col, ProgressBar } from 'react-bootstrap';
+import { ButtonGroup, Button, Col,} from 'react-bootstrap';
+import ProgressBar from './ProgressBar';
 import Proptypes from 'prop-types';
 import YouTube from 'react-youtube';
 import './stylesheet/YoutubeVideo.sass'
-
+import './stylesheet/ProgressBar.sass'
 // https://www.youtube.com/watch?v=-_pgcFQ0l64
 // https://youtu.be/-_pgcFQ0l64
 // https://www.youtube.com/watch?v=-_pgcFQ0l64&list=PLEsfXFp6DpzQbwYDx1zgcKJ4tzyWFaESK
@@ -22,6 +23,7 @@ export default class ReactYoutube extends React.Component {
     this.pause = this.pause.bind(this);
     this.repeat = this.repeat.bind(this);
     this.stop = this.stop.bind(this);
+    this.updateProgressSkit = this.updateProgressSkit.bind(this);
   }
 
   play() {
@@ -31,6 +33,7 @@ export default class ReactYoutube extends React.Component {
 
     if(video?.getPlayerState() === 1){
       this.setState({isToogle: true});
+      this.updateProgressSkit();
     }
   };
 
@@ -44,13 +47,23 @@ export default class ReactYoutube extends React.Component {
 
   repeat() {
     this.setState({ progressBar: 0});
-    this.state.eventVideo?.target.seekTo(this.props.video?.playFprm, true);
+    this.state.eventVideo?.target.seekTo(this.props.video?.playFrom, true);
     this.play();
   }
 
   stop() {
     let video = this.state.eventVideo?.target;
     video?.stopVideo();
+  }
+
+  updateProgressSkit() {
+    let self = this;
+    let timer = setInterval(() => {
+      self.updateProgressBar();
+      if(self.state.isToogle === false || self.state.progressBar === 100){
+        clearInterval(timer);
+      }
+    }, 100);
   }
 
 
@@ -117,7 +130,7 @@ export default class ReactYoutube extends React.Component {
               onEnd={_onEnd}
             />
           </div>
-          <ProgressBar className="b-progress-bar" now={this.props.progressBar} />
+          <ProgressBar className="b-progress-bar" now={this.props.progressBar}/>
         </Col>
       </React.Fragment>
     );

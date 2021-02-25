@@ -1,6 +1,7 @@
 import React from "react";
 import { ProgressBar } from "react-bootstrap";
 import PropTypes from "prop-types";
+import './stylesheet/ProgressBar.sass'
 
 const BProgressBar = ({percent}) => {
   const [value, setValue] = React.useState(0);
