@@ -1,6 +1,5 @@
 import React from 'react';
-import { ButtonGroup, Button, Col,} from 'react-bootstrap';
-import ProgressBar from './ProgressBar';
+import { ButtonGroup, Button, Col, ProgressBar} from 'react-bootstrap';
 import Proptypes from 'prop-types';
 import YouTube from 'react-youtube';
 import './stylesheet/YoutubeVideo.sass'
@@ -130,7 +129,7 @@ export default class ReactYoutube extends React.Component {
               onEnd={_onEnd}
             />
           </div>
-          <ProgressBar />
+          <ProgressBar className="b-progress-bar" now={this.props.progressBar}/>
         </Col>
       </React.Fragment>
     );
