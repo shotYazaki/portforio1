@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import './stylesheet/ProgressBar.sass'
 
 const BProgressBar = ({percent}) => {
+
   const [value, setValue] = React.useState(0);
 
   React.useEffect(() => {
@@ -16,6 +17,7 @@ const BProgressBar = ({percent}) => {
     </React.Fragment>
   );
 };
+
 
 BProgressBar.propTypes = {
   percent: PropTypes.string
