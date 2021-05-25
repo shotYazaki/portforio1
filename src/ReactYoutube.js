@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonGroup, Button, Col, Row} from 'react-bootstrap';
+import { Button, Col, } from 'react-bootstrap';
 import Proptypes from 'prop-types';
 import YouTube from 'react-youtube';
 import ProgressBar from './ProgressBar';
@@ -125,6 +125,8 @@ export default class ReactYoutube extends React.Component {
     };
 
     const opts = {
+      height: '390',
+      width: '640',
       playerVars: { // https://developers.google.com/youtube/player_parameters
         loop: 1,
         autoplay: 1,
@@ -138,15 +140,10 @@ export default class ReactYoutube extends React.Component {
     const {videoId} = this.props
     return (
       <React.Fragment>
-        <Row>
-          <Col lg={{ span: 8, offset: 2 }} md={12} sm={12} xs={12} className="px-0 px-sm-1 px-md-2 p-lg-3 video-box">
-           <div className="Play-button">
-             <ButtonGroup size="mb-2">
-               <Button onClick={this.play}>play</Button>
-               <Button onClick={this.pause}>pause</Button>
-               <Button onClick={this.stop}>stop</Button>
-             </ButtonGroup>
-           </div>
+          <Col lg={{ span: 8, offset: 2 }} md={12} sm={12} xs={12} className="p-0 p-sm-1 p-md-2 p-lg-3">
+            <Button variant="primary" size="lg" onClick={this.play}>play</Button>
+            <Button variant="primary" size="lg" onClick={this.pause}>pause</Button>
+            <Button variant="primary" size="lg" onClick={this.stop}>stop</Button>
            <div className={"auto-resizable-iframe"}>
              <YouTube
                 videoId={videoId}
@@ -157,9 +154,8 @@ export default class ReactYoutube extends React.Component {
                 onEnd={_onEnd}
               />
            </div>
-           <ProgressBar />
+           <ProgressBar className="b-progress-bar" now={this.props.progressBar}/>
           </Col>
-        </Row>
       </React.Fragment>
     );
   }
