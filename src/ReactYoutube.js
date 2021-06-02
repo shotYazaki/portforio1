@@ -59,7 +59,7 @@ export default class ReactYoutube extends React.Component {
     let self = this;
     let timer = setInterval(() => {
       self.updateProgressBar();
-      if(self.state.isToogle == false || self.state.progressBar == 100){
+      if(self.state.isToogle === false || self.state.progressBar === 100){
         clearInterval(timer);
       }
     }, 100);
