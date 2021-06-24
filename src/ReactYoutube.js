@@ -129,8 +129,8 @@ export default class ReactYoutube extends React.Component {
       width: '640',
       playerVars: { // https://developers.google.com/youtube/player_parameters
         loop: 1,
-        autoplay: 1,
-        controls: 0,
+        autoplay: 0,
+        controls: 1,
         fs: 0,
         playsinline: 1,
         cc_load_policy: 3,
