@@ -5,9 +5,9 @@ class Home extends React.Component {
     render() {
         return(
             <div className='Youtube-video'>
-               <ReactYoutube videoId = 'vlDzYIIOYmM' />
-               <ReactYoutube videoId = 'Ks71YWIDEuM' />
-               <ReactYoutube videoId = 'Jqf9haCd6mM' />
+               <ReactYoutube videoId = 'cGGn0u5NaPY' />
+               <ReactYoutube videoId = '3OyZXO4P-Bg' />
+               <ReactYoutube videoId = 'SUtR8b1KnaE' />
             </div>
         );
     }
