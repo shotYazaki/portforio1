@@ -1,3 +1,7 @@
+# The explenation.
+
+日本を映像の観点から見て楽しんでもらいたいと思い [Youtube](https://www.youtube.com/)の映像を使って紹介してみたいと思ったから。
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
