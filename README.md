@@ -1,6 +1,11 @@
 # The explenation.
 
-日本を映像の観点から見て楽しんでもらいたいと思い [Youtube](https://www.youtube.com/)の映像を使って紹介してみたいと思ったから。
+日本を映像の観点から見て楽しんでもらいたいと思い [Youtube](https://www.youtube.com/)の映像を使って紹介してみたいと思ったから。(勉強兼自主開発)
+
+使ったパッケージ
+Bootstrap React-bootstrap
+React-Youtube
+React-router-dom
 
 # Getting Started with Create React App
 
